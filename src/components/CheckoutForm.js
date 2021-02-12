@@ -1,5 +1,5 @@
 import React from "react";
-import useForm from '../hooks/useForm'
+import useForm from '../hooks/useForm';
 
 const initialValue = {
   firstName: "",
@@ -15,7 +15,7 @@ const initialValue = {
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
 const CheckoutForm = (props) => {
-  
+ 
   const [values, handleChanges, clearForm, showSuccessMessage, handleSubmit] = useForm(initialValue, false);
 
   return (
@@ -26,6 +26,7 @@ const CheckoutForm = (props) => {
           First Name:
           <input
             name="firstName"
+            type="text"
             value={values.firstName || ""}
             onChange={handleChanges}
           />
@@ -34,6 +35,7 @@ const CheckoutForm = (props) => {
           Last Name:
           <input
             name="lastName"
+            type="text"
             value={values.lastName || ""}
             onChange={handleChanges}
           />
@@ -42,23 +44,36 @@ const CheckoutForm = (props) => {
           Address:
           <input
             name="address"
+            type="text"
             value={values.address || ""}
             onChange={handleChanges}
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city || ""} onChange={handleChanges} />
+          <input 
+            name="city" 
+            type="text"
+            value={values.city || ""} 
+            onChange={handleChanges} />
         </label>
         <label>
           State:
-          <input name="state" value={values.state || ""} onChange={handleChanges} />
+          <input 
+            name="state" 
+            type="text"
+            value={values.state || ""} 
+            onChange={handleChanges} />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip || ""} onChange={handleChanges} />
+          <input 
+            name="zip" 
+            type="text"
+            value={values.zip || ""} 
+            onChange={handleChanges} />
         </label>
-        <button onClick={clearForm}>Checkout</button>
+        <button type="submit" onClick={clearForm}>Checkout</button>
       </form>
 
       {showSuccessMessage && (
@@ -81,6 +96,5 @@ const CheckoutForm = (props) => {
     </>
   );
 };
-
 
 export default CheckoutForm;
