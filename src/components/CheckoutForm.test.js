@@ -8,7 +8,6 @@ test("form header renders", () => {
     render(<CheckoutForm />);
 
     const header = screen.getByText(/checkout form/i);
-
     expect(header).toBeInTheDocument();
 });
 
