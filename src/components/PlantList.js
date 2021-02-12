@@ -7,12 +7,14 @@ export default class PlantList extends Component {
   }
   // add state with a property called "plants" - initialize as an empty array
 componentDidMount(){
-  axios.get(`http://localhost:3333/plants`)
+  axios.get("http://localhost:3333/plants")
   .then((res) =>{
     console.log(res)
     this.setState({
       plants: res.data.plantsData
+      
     });
+    console.log(res.data.plantsData)
   })
   .catch(err=> console.log(err));
 }
